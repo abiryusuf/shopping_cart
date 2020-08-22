@@ -35,7 +35,9 @@ function phoneHandlePrice(count){
     decrease.value = newCount;
     const total = newCount * 1219;
     document.getElementById("phone-total").innerText = "$" + total;
-}
+
+    totalCalculate();
+};
     
 //case
 
@@ -63,8 +65,8 @@ function phoneHandlePrice(count){
 //     handleCasePrice(false);
 // })
 
-function handleCasePrice(increase){
-    const caseInput = document.getElementById("case-input");
+function handleCasePrice(product, increase){
+    const caseInput = document.getElementById(product + "-input");
     const caseCount = parseInt(caseInput.value);
     //const newCase = caseCount - 1;
     let newCase = caseCount;
@@ -77,5 +79,26 @@ function handleCasePrice(increase){
     }
     caseInput.value = newCase; 
     const total = newCase * 59;
-    document.getElementById("price").innerText = "$" + total;
+    document.getElementById(product + "-total").innerText = "$" + total;
+    totalCalculate();
+}
+
+function totalCalculate(){
+    const phoneInput = document.getElementById("phone-count");
+    const phoneCount = parseInt(phoneInput.value);
+
+    const caseInput = document.getElementById("case-input");
+    const caseCount = parseInt(caseInput.value);
+
+    const totalPrice = phoneCount * 1219 + caseCount * 59;
+    document.getElementById("total-price").innerText = "$" + totalPrice;
+
+    const tax = Math.round(totalPrice * 0.1);
+    document.getElementById("total-tax").innerText = "$" + tax;
+
+    const grandTotal = totalPrice + tax;
+    document.getElementById("total").innerText = "$" + grandTotal;
+
+
+
 }
