@@ -25,9 +25,9 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default" id="minusBtn"><i class="fas fa-minus"></i></button>
+                           <button class="btn btn-default" id="minusBtn" onclick="phoneHandlePrice(false)"><i class="fas fa-minus"></i></button>
                            <input type="text" id = "phone-count" class="form-control text-center" value="1">
-                           <button class="btn btn-default" id="plusBtn"><i class="fas fa-plus"></i></button>
+                           <button class="btn btn-default" id="plusBtn" onclick="phoneHandlePrice(true)"><i class="fas fa-plus"></i></button>
                         </div>
                         <h5 id="phone-total">$1219</h5>
                         <img src="images/remove.png" alt="" class="remove-item">
@@ -43,9 +43,9 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default" id="caseDecrease"><i class="fas fa-minus"></i></button>
+                           <button class="btn btn-default" id="caseDecrease" onclick="handleCasePrice(false);"><i class="fas fa-minus"></i></button>
                            <input type="text" id="case-input" class="form-control text-center" value="1">
-                           <button class="btn btn-default" id ="caseBtn"><i class="fas fa-plus"></i></button>
+                           <button class="btn btn-default" id ="caseBtn" onclick="handleCasePrice(true);"><i class="fas fa-plus"></i></button>
 
                         </div>
                         <h5 id="price">$59</h5>
